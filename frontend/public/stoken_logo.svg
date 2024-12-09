@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="180.73326mm"
+   height="49.294399mm"
+   viewBox="0 0 180.73327 49.294399"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="stoken_logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0192238"
+     inkscape:cx="304.64359"
+     inkscape:cy="72.113701"
+     inkscape:window-width="1892"
+     inkscape:window-height="1020"
+     inkscape:window-x="12"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1"
+     showgrid="false" />
+  <defs
+     id="defs1">
+    <rect
+       x="-80.453377"
+       y="-71.623131"
+       width="821.21313"
+       height="354.1911"
+       id="rect2" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-27.143059,-92.637211)">
+    <g
+       id="g1">
+      <g
+         id="g2">
+        <path
+           id="polygon1"
+           d="m 42.91839,92.637211 v 17.822809 l 14.543987,6.3711 z m -0.955298,0.0073 L 27.620649,116.7422 41.963092,110.46 Z m 0,18.858599 -14.820033,6.49179 14.820033,8.68095 z m 0.955298,0 v 15.17311 l 14.830351,-8.677 z m -15.675638,9.60614 14.72034,20.82236 v -12.20379 z m 30.395982,0 -14.720344,8.61857 v 12.20379 z"
+           style="fill:#42009a;fill-opacity:1;stroke-width:0.216682" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.0204px;font-family:'Funnel Sans';-inkscape-font-specification:'Funnel Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#191c21;fill-opacity:1;stroke-width:0.279334"
+           x="59.204521"
+           y="131.78145"
+           id="text1"><tspan
+             sodipodi:role="line"
+             id="tspan1"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Numans;-inkscape-font-specification:Numans;fill:#191c21;fill-opacity:1;stroke-width:0.279335"
+             x="59.204521"
+             y="131.78145">stoken</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,27.143059,92.637211)"
+         id="text2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150.667px;font-family:Numans;-inkscape-font-specification:Numans;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect2);fill:#191c21;stroke-width:1.00157" />
+    </g>
+  </g>
+</svg>
