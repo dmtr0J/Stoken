@@ -15,12 +15,12 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        return ResponseEntity.ok().body(userService.getUserById(id));
+        return ResponseEntity.ok().body(userService.getById(id));
     }
 
     @PostMapping("/save")
     public ResponseEntity<User> saveUser(@RequestBody User user) {
-        return ResponseEntity.ok().body(userService.saveUser(user));
+        return ResponseEntity.ok().body(userService.save(user));
     }
 
 }
