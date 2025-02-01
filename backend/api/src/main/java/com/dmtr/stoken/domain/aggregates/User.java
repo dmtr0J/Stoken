@@ -1,5 +1,6 @@
-package com.dmtr.stoken.domain.entities;
+package com.dmtr.stoken.domain.aggregates;
 
+import com.dmtr.stoken.domain.entities.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -20,9 +22,9 @@ import java.time.LocalDateTime;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private UUID id;
 
     @NotBlank(message = "Username is required.")
     @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters.")
@@ -44,12 +46,10 @@ public class User {
     @Column(name = "role", nullable = false)
     private Role role;
 
-    //@NotBlank(message = "First name is required.")
     @Size(max = 100, message = "First name must not exceed 100 characters.")
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    //@NotBlank(message = "Last name is required.")
     @Size(max = 100, message = "Last name must not exceed 100 characters.")
     @Column(name = "last_name", nullable = false)
     private String lastName;

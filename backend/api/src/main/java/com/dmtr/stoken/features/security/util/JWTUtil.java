@@ -5,6 +5,8 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -19,20 +21,18 @@ public class JWTUtil {
     @Value("${jwt.expiration}")
     private Long expirationMillis;
 
-    private final Algorithm algorithm = Algorithm.HMAC256(secret);
-
     public String generateToken(String username) {
         return JWT.create()
                 .withSubject(username)
                 .withIssuedAt(Instant.now())
                 .withExpiresAt(Instant.now().plusMillis(expirationMillis))
                 .withIssuer("Stoken")
-                .sign(algorithm);
+                .sign(Algorithm.HMAC256(secret));
     }
 
     public boolean validateToken(String token, String subject) {
         try{
-            JWTVerifier verifier = JWT.require(algorithm)
+            JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret))
                     .withSubject(subject)
                     .build();
             verifier.verify(token);

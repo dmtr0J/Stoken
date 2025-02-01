@@ -1,5 +1,8 @@
 package com.dmtr.stoken.infrastructure.config;
 
+import com.dmtr.stoken.features.asset.repositories.AssetRepository;
+import com.dmtr.stoken.features.user.repositories.UserRepository;
+import com.dmtr.stoken.features.user.services.UserService;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -16,9 +19,9 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = {
-                "com.dmtr.stoken.features.user.repositories",
-                "com.dmtr.stoken.features.asset.repositories"
+        basePackageClasses = {
+                UserRepository.class,
+                AssetRepository.class,
         },
         entityManagerFactoryRef = "readEntityManagerFactory",
         transactionManagerRef = "readTransactionManager"
@@ -36,7 +39,7 @@ public class ReadDataSourceConfig {
             @Qualifier("readDataSource") DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan(new String[] { "com.dmtr.stoken.domain.entities" });
+        em.setPackagesToScan("com.dmtr.stoken.domain.aggregates");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         return em;

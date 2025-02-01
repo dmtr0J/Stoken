@@ -1,10 +1,12 @@
 package com.dmtr.stoken.infrastructure.config;
 
+import com.dmtr.stoken.domain.events.repositories.EventRepository;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,9 +18,8 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = {
-                "com.dmtr.stoken.features.user.repositories",
-                "com.dmtr.stoken.features.asset.repositories"
+        basePackageClasses = {
+            EventRepository.class
         },
         entityManagerFactoryRef = "eventEntityManagerFactory",
         transactionManagerRef = "eventTransactionManager"
@@ -36,7 +37,7 @@ public class EventDataSourceConfig {
             @Qualifier("eventDataSource") DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan(new String[] { "com.dmtr.stoken.domain.entities" });
+        em.setPackagesToScan("com.dmtr.stoken.domain.events");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         return em;

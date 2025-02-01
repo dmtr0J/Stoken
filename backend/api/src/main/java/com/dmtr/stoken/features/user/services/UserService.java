@@ -1,19 +1,23 @@
 package com.dmtr.stoken.features.user.services;
 
-import com.dmtr.stoken.domain.entities.User;
+import com.dmtr.stoken.domain.aggregates.User;
 import com.dmtr.stoken.features.user.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.UUID;
+
+@Slf4j
 @Service
-@Transactional(readOnly = true)
+@Transactional(transactionManager = "readTransactionManager", readOnly = true)
 @RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
 
-    public User getById(Long id) {
+    public User getById(UUID id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
     }

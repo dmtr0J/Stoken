@@ -1,6 +1,10 @@
-package com.dmtr.stoken.domain.entities;
+package com.dmtr.stoken.domain.aggregates;
 
+import com.dmtr.stoken.domain.entities.AssetStatus;
+import com.dmtr.stoken.domain.entities.AssetType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -19,6 +23,7 @@ import java.util.UUID;
 public class Asset {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @NotBlank(message = "Asset name cannot be blank")
